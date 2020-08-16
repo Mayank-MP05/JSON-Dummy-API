@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 
-var chance = require('chance').Chance();
+var chance = require("chance").Chance();
 const PORT = 8100 || process.env.PORT;
 
 const app = express();
@@ -14,3 +14,5 @@ app.get("/", (req, res) => {
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}...`);
 });
+
+module.exports = app;
