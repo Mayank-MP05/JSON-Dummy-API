@@ -10,7 +10,9 @@ app.use(cors());
 app.get("/", (req, res) => {
   res.send("Hello from Dummy Server...");
 });
-
+app.get("/hi", (req, res) => {
+  res.send("Hiiiiiiii");
+});
 app.listen(PORT, () => {
   console.log(`App is running on ${PORT}...`);
 });
