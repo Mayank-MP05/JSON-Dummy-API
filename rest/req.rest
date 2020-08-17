@@ -3,11 +3,11 @@ GET http://localhost:1234/
 ### 
 GET http://localhost:1234/hello
 
-### 
-GET http://localhost:1234/users
+### Tesing for Array
+GET http://localhost:1234/array
 
-### 
-GET http://localhost:1234/prod/46
+### Testing the Object Route
+GET http://localhost:1234/object
 
-### 
-GET http://localhost:1234/api/users
+### Testing Integration of Arrays and Objects
+GET http://localhost:1234/arrAndObj

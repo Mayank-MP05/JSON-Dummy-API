@@ -1,5 +1,28 @@
 const chance = require("chance").Chance();
 
+// Second Order funnciton to define config object in
+// first order and funciton call in second order
+const ArrFunction = ({ type, limit }) => () => {
+  let arr = [];
+  for (let i = 0; i < limit; i++) {
+    arr.push(type());
+  }
+  return arr;
+};
+
+const Objectfunction = (ObjContent) => () => {
+  let obj = {};
+  const arr = Object.entries(ObjContent);
+  //console.log(Object.entries(configRoute.response));
+  arr.map((entry) => {
+    //console.log(entry);
+    const keyName = entry[0];
+    const valueFunction = entry[1];
+    obj[keyName] = valueFunction();
+  });
+  return obj;
+};
+
 module.exports = {
   //Dummy Text Content
   PARAGRAPH: () => chance.paragraph(),
@@ -28,4 +51,10 @@ module.exports = {
 
   //Others
   NULL: () => null(),
+
+  //Array
+  ARRAY: ArrFunction,
+
+  //Object
+  OBJECT: Objectfunction,
 };
