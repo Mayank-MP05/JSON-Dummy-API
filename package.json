@@ -1,6 +1,6 @@
 {
   "name": "json-dummy-api",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "NPM package to create dummy JSON API with fake response backed by express server.",
   "main": "index.js",
   "scripts": {
