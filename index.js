@@ -19,7 +19,15 @@ app.get("/dashboard", (req, res) => {
 });
 
 //Function to Start the Server
-app.startDummyServer = function() {
+app.startDummyServer = (configObjectArray) => {
+  if (configObjectArray) {
+    //console.log(configObjectArray);
+    configObjectArray.map((configRoute) => {
+      app.get(configRoute.routeName, (req, res) => {
+        res.json(configRoute.response);
+      });
+    });
+  }
   app.listen(PORT, () => {
     console.log(`SERVER is running on http://localhost:${PORT}/`);
   });
