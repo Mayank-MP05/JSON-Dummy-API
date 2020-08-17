@@ -3,3 +3,11 @@ GET http://localhost:8100/
 ### 
 GET http://localhost:8100/hi
 
+### 
+GET http://localhost:8100/users
+
+### 
+GET http://localhost:8100/prod/46
+
+### 
+GET http://localhost:8100/api/users
