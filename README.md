@@ -68,6 +68,7 @@ app.startDummyServer(routes);
 
 ---
 
-```
+
 All the above datatypes are exported from the module. you can simply import them via using Object Destructuring syntax. It regenrated random data for Mocking/Prototyping
-```
+
+-----
