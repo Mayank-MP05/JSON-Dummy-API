@@ -25,4 +25,7 @@ module.exports = {
 
   //Boolean Data
   BOOL: () => chance.bool(),
+
+  //Others
+  NULL:()=>null,
 };
