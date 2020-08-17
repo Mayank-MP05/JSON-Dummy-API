@@ -1,28 +1,19 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const chance = require("chance").Chance();
-let { paragraph } = require("./dummyData/TextContent");
 const PORT = 8100 || process.env.PORT;
-
 const app = express();
+
 app.use(cors());
 app.use(bodyparser.json());
+
 app.get("/", (req, res) => {
-  res.send("Hello from Dummy Server...");
-});
-app.get("/hi", (req, res) => {
-  res.json(app);
-  console.log(app)
+  res.redirect("/dashboard");
+  //console.log("REdirectd : This is Dashboard Route");
 });
 
-let arr = ["users", "posts", "products", "prod/46"];
-arr.map((el) => {
-  app.get(`/${el}`, (req, res) => {
-    res.json({
-      cat: el,
-    });
-  });
+app.get("/dashboard", (req, res) => {
+  res.send("This is Dashboard Route");
 });
 
 app.get("/api/:route", (req, res) => {
@@ -31,19 +22,23 @@ app.get("/api/:route", (req, res) => {
       msg: app,
     });
   }
-  res.json({
-    err: "Route Not Found",
-  }).status(404);
+  res
+    .json({
+      err: "Route Not Found",
+    })
+    .status(404);
+});
+
+app.listen(PORT, () => {
+  console.log("Server Strter");
 });
 
 app.startDummyServer = () => {
-  app.listen(PORT,()=>{
-    console.log("SERVER by pROto")
-  })
-}
+  app.listen(PORT, () => {
+    console.log("SERVER by pROto");
+  });
+};
 module.exports = {
   app,
   PORT,
-  chance,
-  arr,
 };

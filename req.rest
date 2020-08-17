@@ -1,7 +1,7 @@
 GET http://localhost:8100/
 
 ### 
-GET http://localhost:8100/hi
+GET http://localhost:8100/
 
 ### 
 GET http://localhost:8100/users
