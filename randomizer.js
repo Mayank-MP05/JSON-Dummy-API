@@ -6,7 +6,7 @@ module.exports = {
   NAME: () => chance.name(),
   SENTENSE: () => chance.sentence(),
   ADDRESS: () => chance.address(),
-  COUNTRY: () => chance.country({ full: true }),
+  COUNTRY: () => chance.country(),
 
   //Dummy User Data
   EMAIL: () => chance.email(),
@@ -21,11 +21,11 @@ module.exports = {
 
   //Integer and Floating Data
   NUMBER: () => chance.integer(),
-  FLOAT: () => Math.random(),
+  FLOAT: Math.random(),
 
   //Boolean Data
   BOOL: () => chance.bool(),
 
   //Others
-  NULL:()=>null,
+  NULL: () => null(),
 };

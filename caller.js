@@ -1,10 +1,11 @@
 const { app, startDummyServer } = require("./index.js");
-const { PARAGRAPH } = require("./randomizer");
+const { PARAGRAPH, DATE } = require("./randomizer");
 const routes = [
   {
     routeName: "/hello",
     response: {
-      para: PARAGRAPH(),
+      para: PARAGRAPH,
+      birthDay: DATE,
     },
   },
 ];
