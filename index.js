@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const PORT = 1234 || process.env.PORT;
+const PORT = process.env.PORT || 1234;
 const app = express();
 
 app.use(cors());
@@ -43,7 +43,62 @@ app.startDummyServer = (configObjectArray) => {
   });
 };
 
+//Dummy data from Randomiser
+const {
+  PARAGRAPH,
+  NAME,
+  SENTENSE,
+  ADDRESS,
+  COUNTRY,
+
+  //Dummy User Data
+  EMAIL,
+  USERNAME,
+  COMPANY,
+  DOMAIN,
+  PHONE,
+
+  //Date related data
+  DATE,
+  TIMESTAMP,
+
+  //Integer and Floating Data
+  NUMBER,
+  FLOAT,
+
+  //Boolean Data
+  BOOL,
+
+  //Others
+  NULL,
+} = require("./randomizer");
 module.exports = {
   app,
-  PORT,
+  //Dummy Text Content
+  PARAGRAPH,
+  NAME,
+  SENTENSE,
+  ADDRESS,
+  COUNTRY,
+
+  //Dummy User Data
+  EMAIL,
+  USERNAME,
+  COMPANY,
+  DOMAIN,
+  PHONE,
+
+  //Date related data
+  DATE,
+  TIMESTAMP,
+
+  //Integer and Floating Data
+  NUMBER,
+  FLOAT,
+
+  //Boolean Data
+  BOOL,
+
+  //Others
+  NULL,
 };

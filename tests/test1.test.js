@@ -1,5 +1,5 @@
-const { app } = require("./index.js");
-const { PARAGRAPH, DATE, FLOAT, NUMBER, BOOL } = require("./randomizer");
+const { app } = require("../index.js");
+const { PARAGRAPH, DATE, FLOAT, NUMBER, BOOL } = require("../randomizer");
 const routes = [
   {
     routeName: "/hello",
