@@ -8,4 +8,11 @@ module.exports = {
   ADDRESS: () => chance.address(),
   COUNTRY: () => chance.country({ full: true }),
 
+  
+  //Dummy User Data
+  EMAIL: () => chance.email(),
+  USERNAME: () => chance.twitter(),
+  COMPANY: () => chance.company(),
+  DOMAIN: () => chance.domain(),
+  PHONE: () => chance.phone(),
 };
