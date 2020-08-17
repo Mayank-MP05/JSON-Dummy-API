@@ -12,7 +12,8 @@ app.get("/", (req, res) => {
   res.send("Hello from Dummy Server...");
 });
 app.get("/hi", (req, res) => {
-  res.send(paragraph());
+  res.json(app);
+  console.log(app)
 });
 
 let arr = ["users", "posts", "products", "prod/46"];
@@ -27,13 +28,19 @@ arr.map((el) => {
 app.get("/api/:route", (req, res) => {
   if (req.params.route === "users") {
     res.json({
-      msg: "This is user route",
+      msg: app,
     });
   }
   res.json({
     err: "Route Not Found",
   }).status(404);
 });
+
+app.startDummyServer = () => {
+  app.listen(PORT,()=>{
+    console.log("SERVER by pROto")
+  })
+}
 module.exports = {
   app,
   PORT,
