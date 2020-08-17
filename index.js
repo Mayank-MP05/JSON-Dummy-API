@@ -1,43 +1,30 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
-const PORT = 8100 || process.env.PORT;
+const PORT = 1234 || process.env.PORT;
 const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
 
+//Home page View Routes
 app.get("/", (req, res) => {
   res.redirect("/dashboard");
   //console.log("REdirectd : This is Dashboard Route");
 });
 
+//Visuals Routes to Homepage
 app.get("/dashboard", (req, res) => {
   res.send("This is Dashboard Route");
 });
 
-app.get("/api/:route", (req, res) => {
-  if (req.params.route === "users") {
-    res.json({
-      msg: app,
-    });
-  }
-  res
-    .json({
-      err: "Route Not Found",
-    })
-    .status(404);
-});
-
-app.listen(PORT, () => {
-  console.log("Server Strter");
-});
-
-app.startDummyServer = () => {
+//Function to Start the Server
+app.startDummyServer = function() {
   app.listen(PORT, () => {
-    console.log("SERVER by pROto");
+    console.log(`SERVER is running on http://localhost:${PORT}/`);
   });
 };
+
 module.exports = {
   app,
   PORT,
