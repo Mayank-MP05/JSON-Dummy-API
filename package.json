@@ -1,13 +1,12 @@
 {
   "name": "json-dummy-api",
   "version": "1.0.0",
-  "description": "NPM package to create dummy JSON API response backed by express server.",
+  "description": "NPM package to create dummy JSON API with fake response backed by express server.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon caller.js"
   },
-  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -17,5 +16,25 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mayank-MP05/JSON-Dummy-API.git"
+  },
+  "homepage": "https://github.com/Mayank-MP05/JSON-Dummy-API#readme",
+  "keywords": [
+    "mocking",
+    "fake",
+    "json",
+    "api",
+    "testing",
+    "API",
+    "server",
+    "prototyping",
+    "rest",
+    "dummy",
+    "restful",
+    "random",
+    "backend"
+  ]
 }

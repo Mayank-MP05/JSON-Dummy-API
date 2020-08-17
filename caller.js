@@ -1,4 +1,4 @@
-const { app, startDummyServer } = require("./index.js");
+const { app } = require("./index.js");
 const { PARAGRAPH, DATE, FLOAT, NUMBER, BOOL } = require("./randomizer");
 const routes = [
   {
