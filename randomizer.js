@@ -18,4 +18,8 @@ module.exports = {
   //Date related data
   DATE: () => chance.date(),
   TIMESTAMP: () => chance.timestamp(),
+
+  //Integer and Floating Data
+  NUMBER: () => chance.integer(),
+  FLOAT: () => Math.random(),
 };
