@@ -21,7 +21,7 @@ module.exports = {
 
   //Integer and Floating Data
   NUMBER: () => chance.integer(),
-  FLOAT: Math.random(),
+  FLOAT: () => Math.random(),
 
   //Boolean Data
   BOOL: () => chance.bool(),

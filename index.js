@@ -30,9 +30,9 @@ app.startDummyServer = (configObjectArray) => {
         //console.log(Object.entries(configRoute.response));
         arr.map((entry) => {
           //console.log(entry);
-          const str = entry[0];
-          const func = entry[1];
-          obj[str] = func();
+          const keyName = entry[0];
+          const valueFunction = entry[1];
+          obj[keyName] = valueFunction();
         });
         res.json(obj);
       });
