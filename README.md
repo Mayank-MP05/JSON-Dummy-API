@@ -68,24 +68,25 @@ For single time start
 
 ## Random Data Types Config
 
-| Data Import | Return values of                                       |
-| ----------- | ------------------------------------------------------ |
-| PARAGRAPH   | Returns the small parapgraph with avg 5 sentenses      |
-| NAME        | returns first name and last name combined              |
-| SENTENSE    | returns the sentense of avg 7 words                    |
-| ADDRESS     | smallest possible address generator                    |
-| COUNTRY     | Two Digit Short Country Code                           |
-| EMAIL       | Generated random fake email with @                     |
-| USERNAME    | Generate Twitter username (random + fake) "@" included |
-| COMPANY     | Generate fake company name to user                     |
-| DOMAIN      | generate fake domain name for the comapany or the user |
-| PHONE       | generates phone no                                     |
-| DATE        | generates date as a string (Long format)               |
-| TIMESTAMP   | Timestamp is 8 digit long number in ms                 |
-| NUMBER      | generate random integer                                |
-| FLOAT       | Random Float value between 0 to 1                      |
-| BOOL        | Returns either `true` or `false`                       |
-| NULL        | returns `null`                                         |
+| Data Import | Return values of                                                                                                    |
+| ----------- | ------------------------------------------------------------------------------------------------------------------- |
+| PARAGRAPH   | Returns the small parapgraph with avg 5 sentenses                                                                   |
+| NAME        | returns first name and last name combined                                                                           |
+| SENTENSE    | returns the sentense of avg 7 words                                                                                 |
+| ADDRESS     | smallest possible address generator                                                                                 |
+| COUNTRY     | Two Digit Short Country Code                                                                                        |
+| EMAIL       | Generated random fake email with @                                                                                  |
+| USERNAME    | Generate Twitter username (random + fake) "@" included                                                              |
+| COMPANY     | Generate fake company name to user                                                                                  |
+| DOMAIN      | generate fake domain name for the comapany or the user                                                              |
+| PHONE       | generates phone no                                                                                                  |
+| DATE        | generates date as a string (Long format)                                                                            |
+| TIMESTAMP   | Timestamp is 8 digit long number in ms                                                                              |
+| NUMBER      | generate random integer                                                                                             |
+| FLOAT       | Random Float value between 0 to 1                                                                                   |
+| BOOL        | Returns either `true` or `false`                                                                                    |
+| NULL        | returns `null`                                                                                                      |
+| IMGURL      | can pass single (as a side of sqaure) or two-arguments (width and hieght of the image) and it returns the image url |
 
 ---
 
@@ -169,4 +170,15 @@ above request will send only the data of user with userID 25
 /products/25
 /qanda/14
 ```
------------------
+
+---
+
+## v3 Specials :
+
+In version 3 you can request any type of request to the server i.e GET, PUT,DELETE,POST
+
+all you have to do is to specify `reqType` param in the route config object of the array.
+
+`reqType` : `GET`,`POST`,`PUT`,`DELETE`
+
+---
