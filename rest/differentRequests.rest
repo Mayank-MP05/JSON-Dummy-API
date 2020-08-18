@@ -1,0 +1,22 @@
+POST http://localhost:1234/hello
+content-type: application/json
+
+{
+    "name": "This is POst data",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+
+PUT http://localhost:1234/hello
+content-type: application/json
+
+{
+    "name": "PUt Data",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+###
+
+DELETE http://localhost:1234/hellso
+###

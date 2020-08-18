@@ -24,19 +24,64 @@ app.get("/dashboard", (req, res) => {
 //Function to Start the Server
 app.startDummyServer = (configObjectArray) => {
   if (configObjectArray) {
-    //console.log(configObjectArray);
     configObjectArray.map((configRoute) => {
-      app.get(configRoute.routeName, (req, res) => {
-        if (Array.isArray(configRoute.response())) {
-          arr = Object.entries(configRoute.response);
-          //console.log("Array passed");
-          res.send(configRoute.response());
-        } else {
-          arr = configRoute.response();
-          //console.log("object passed");
-          res.send(arr);
-        }
-      });
+      if (configRoute.reqType === "GET") {
+        app.get(configRoute.routeName, (req, res) => {
+          if (Array.isArray(configRoute.response())) {
+            arr = Object.entries(configRoute.response);
+            res.send(configRoute.response());
+          } else {
+            arr = configRoute.response();
+            res.send(arr);
+          }
+        });
+      } else if (configRoute.reqType === "POST") {
+        app.post(configRoute.routeName, (req, res) => {
+          console.log(req.body);
+
+          if (Array.isArray(configRoute.response())) {
+            arr = Object.entries(configRoute.response);
+            res.send(configRoute.response());
+          } else {
+            arr = configRoute.response();
+            res.send(arr);
+          }
+          console.log(`POST req on ${configRoute.routeName}`);
+        });
+      } else if (configRoute.reqType === "PUT") {
+        app.put(configRoute.routeName, (req, res) => {
+          console.log(req.body);
+          if (Array.isArray(configRoute.response())) {
+            arr = Object.entries(configRoute.response);
+            res.send(configRoute.response());
+          } else {
+            arr = configRoute.response();
+            res.send(arr);
+          }
+          console.log(`PUT req on ${configRoute.routeName}`);
+        });
+      } else if (configRoute.reqType === "DELETE") {
+        app.delete(configRoute.routeName, (req, res) => {
+          if (Array.isArray(configRoute.response())) {
+            arr = Object.entries(configRoute.response);
+            res.send(configRoute.response());
+          } else {
+            arr = configRoute.response();
+            res.send(arr);
+          }
+          console.log(`DELETE req on ${configRoute.routeName}`);
+        });
+      } else {
+        app.get(configRoute.routeName, (req, res) => {
+          if (Array.isArray(configRoute.response())) {
+            arr = Object.entries(configRoute.response);
+            res.send(configRoute.response());
+          } else {
+            arr = configRoute.response();
+            res.send(arr);
+          }
+        });
+      }
     });
   }
   app.listen(PORT, () => {
