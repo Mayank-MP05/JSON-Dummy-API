@@ -71,6 +71,9 @@ const {
 
   //Others
   NULL,
+  //Array and Object
+  ARRAY,
+  OBJECT,
 } = require("./randomizer");
 module.exports = {
   app,
@@ -101,4 +104,6 @@ module.exports = {
 
   //Others
   NULL,
+  ARRAY,
+  OBJECT,
 };
