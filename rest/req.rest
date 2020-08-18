@@ -11,3 +11,9 @@ GET http://localhost:1234/object
 
 ### Testing Integration of Arrays and Objects
 GET http://localhost:1234/arrAndObj
+
+
+########################################################
+
+### Default Routes Testing Starts here
+GET http://localhost:1234/qanda
