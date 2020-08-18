@@ -148,4 +148,25 @@ app.startDummyServer(routes);
 
 in `ARRAY` function you can directly pass object where you can specify type of the array elements in `type` and length of the array in `limit` args. Both args are compulsory
 
+## Default Routes
 
+while developing version 1 I just wanted to add some default routes just like json-typicode api hence three default routes were added in V2
+
+| Route       | Value it returns                                                               |
+| ----------- | ------------------------------------------------------------------------------ |
+| `/qanda`    | returns the array of the QandA with Question, Answer , Upvotes , Downvotes     |
+| `/users`    | return the array of user objects with Name,username,Bio,Age                    |
+| `/products` | returns the array of products with title, description,price,starrating,instock |
+
+Above are all the parent routes like this routes usually returns all the data. To get one perticular object you have to pass the id in request as `/users/25`
+above request will send only the data of user with userID 25
+
+`examples`
+
+```
+/users/12
+/users
+/products/25
+/qanda/14
+```
+-----------------
