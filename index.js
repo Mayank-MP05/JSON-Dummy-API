@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const bodyparser = require("body-parser");
+const defaultRoutes = require("./defaultRoutes");
 const PORT = process.env.PORT || 1234;
 const app = express();
-
 app.use(cors());
 app.use(bodyparser.json());
+
+// All the default routes : QandA , Users ,Products
+defaultRoutes(app);
 
 //Home page View Routes
 app.get("/", (req, res) => {
