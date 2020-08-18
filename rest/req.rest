@@ -47,3 +47,9 @@ GET  http://localhost:1234/arrayOfObjects
 
 ### Send File over Request
 GET  http://localhost:1234/getImg
+
+### Send File over Request
+GET  http://localhost:1234/getImg/150
+
+### Send File over Request
+GET  http://localhost:1234/getImg/250/450
