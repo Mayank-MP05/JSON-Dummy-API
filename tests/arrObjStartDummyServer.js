@@ -1,4 +1,4 @@
-const { app, PORT } = require("../index");
+onst { app, PORT } = require("../index");
 const { OBJECT, NAME, NUMBER, ARRAY, BOOL, DATE } = require("../randomizer");
 
 app.startDummyServer = (configObjectArray) => {

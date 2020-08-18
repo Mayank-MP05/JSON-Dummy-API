@@ -41,4 +41,6 @@ GET  http://localhost:1234/objectParent
 ###
 GET  http://localhost:1234/char
 
+### Custom array of Objcts
+GET  http://localhost:1234/arrayOfObjects
 ################################################
