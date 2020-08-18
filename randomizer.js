@@ -27,6 +27,15 @@ const AutoIncrement = (startingIndex) => () => {
   return startingIndex++;
 };
 
+const ImgURLFunction = (side) => {
+  if (side) return `http://via.placeholder.com/${side}`;
+  else return `http://via.placeholder.com/150`;
+};
+
+const ImgURLFunction = (width, height) => {
+  return `http://via.placeholder.com/${width}x${height}`;
+};
+
 module.exports = {
   //Dummy Text Content
   PARAGRAPH: () => chance.paragraph(),
@@ -64,4 +73,5 @@ module.exports = {
 
   //Autoincrementing function
   AUTOINCREMENT: AutoIncrement,
+  IMGURL: ImgURLFunction,
 };
