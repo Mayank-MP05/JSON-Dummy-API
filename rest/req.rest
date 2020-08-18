@@ -1,6 +1,6 @@
 GET http://localhost:1234/
 
-### 
+### Simplest Routes
 GET http://localhost:1234/hello
 
 ### Tesing for Array
