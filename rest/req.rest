@@ -15,5 +15,17 @@ GET http://localhost:1234/arrAndObj
 
 ########################################################
 
-### Default Routes Testing Starts here
+### Default Routes Testing Starts here : Q and A
 GET http://localhost:1234/qanda
+###
+GET http://localhost:1234/qanda/55
+
+### Users
+GET http://localhost:1234/users
+###
+GET http://localhost:1234/users/35
+
+### Products
+GET http://localhost:1234/products
+###
+GET http://localhost:1234/products/12
