@@ -24,17 +24,15 @@ app.startDummyServer = (configObjectArray) => {
     //console.log(configObjectArray);
     configObjectArray.map((configRoute) => {
       app.get(configRoute.routeName, (req, res) => {
-        let obj = {};
-        //console.log(configRoute.response);
-        const arr = Object.entries(configRoute.response);
-        //console.log(Object.entries(configRoute.response));
-        arr.map((entry) => {
-          //console.log(entry);
-          const keyName = entry[0];
-          const valueFunction = entry[1];
-          obj[keyName] = valueFunction();
-        });
-        res.json(obj);
+        if (Array.isArray(configRoute.response())) {
+          arr = Object.entries(configRoute.response);
+          //console.log("Array passed");
+          res.send(configRoute.response());
+        } else {
+          arr = configRoute.response();
+          //console.log("object passed");
+          res.send(arr);
+        }
       });
     });
   }
@@ -77,6 +75,7 @@ const {
 } = require("./randomizer");
 module.exports = {
   app,
+  PORT,
   //Dummy Text Content
   PARAGRAPH,
   NAME,

@@ -29,3 +29,16 @@ GET http://localhost:1234/users/35
 GET http://localhost:1234/products
 ###
 GET http://localhost:1234/products/12
+
+#####################################################
+### Request for Array and Object as parent direct
+
+GET http://localhost:1234/arrayParent
+
+###
+GET  http://localhost:1234/objectParent
+
+###
+GET  http://localhost:1234/char
+
+################################################

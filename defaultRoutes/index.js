@@ -1,7 +1,7 @@
 const { app } = require("../index");
-const productDB = require("./../databases/Products.database.json");
-const qandaDB = require("./../databases/QandA.database.json");
-const usersDB = require("./../databases/Users.database.json");
+const productDB = require("../databases/Products.database.json");
+const qandaDB = require("../databases/QandA.database.json");
+const usersDB = require("../databases/Users.database.json");
 //Question and Answer Setup
 app.get("/qanda", (req, res) => {
   res.send(qandaDB);
@@ -58,4 +58,4 @@ app.get("/products/:id", (req, res) => {
     });
   }
 });
-app.startDummyServer();
+module.exports = app;
