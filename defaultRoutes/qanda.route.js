@@ -1,10 +1,16 @@
-const { SENTENSE, PARAGRAPH, FLOAT, NUMBER } = require("../randomizer");
+const {
+  SENTENSE,
+  PARAGRAPH,
+  FLOAT,
+  NUMBER,
+  AUTOINCREMENT,
+} = require("../randomizer");
 
 const qandaRoute = [
   {
     routeName: "/qanda",
     response: {
-      QuestionID: NUMBER,
+      QuestionID: AUTOINCREMENT(0),
       question: SENTENSE,
       answer: PARAGRAPH,
     },

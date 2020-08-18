@@ -23,6 +23,10 @@ const Objectfunction = (ObjContent) => () => {
   return obj;
 };
 
+const AutoIncrement = (startingIndex) => () => {
+  return startingIndex++;
+};
+
 module.exports = {
   //Dummy Text Content
   PARAGRAPH: () => chance.paragraph(),
@@ -57,4 +61,7 @@ module.exports = {
 
   //Object
   OBJECT: Objectfunction,
+
+  //Autoincrementing function
+  AUTOINCREMENT: AutoIncrement,
 };
