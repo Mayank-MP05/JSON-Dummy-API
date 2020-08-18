@@ -1,13 +1,5 @@
 const { app } = require("../index.js");
-const {
-  PARAGRAPH,
-  DATE,
-  FLOAT,
-  NUMBER,
-  BOOL,
-  ARRAY,
-  OBJECT,
-} = require("../randomizer");
+const { DATE, BOOL, OBJECT } = require("../index");
 const routes = [
   {
     routeName: "/object",

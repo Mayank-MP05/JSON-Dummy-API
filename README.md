@@ -1,4 +1,4 @@
-# JSON Dummy API @2.0.0
+# JSON Dummy API
 
 ## Introduction
 
@@ -13,6 +13,8 @@ To use nodemon in your project, lets first install it
 ```sh
 npm i nodemon --save-dev
 ```
+
+you can install globally if you want you just need to add `-g` flag to the command after you install nodemon next step is to create `server.js` file
 
 ## Create the Server config file
 
@@ -34,6 +36,25 @@ const routes = [
 
 app.startDummyServer(routes);
 ```
+
+- `startDummyServer` is the must have function to start the server.
+- `routes` is the configuration array which is optional
+
+After you create server.js file to start this dummy server on localhost you have to use nodemon (or maybe node in your case). To start the server simply run below command in the same file directory
+
+```sh
+nodemon server.js
+```
+
+For constant change tracking and automatic restart
+
+#### OR
+
+```sh
+node server.js
+```
+
+For single time start
 
 ### Points to Note here
 
@@ -71,3 +92,60 @@ app.startDummyServer(routes);
 All the above datatypes are exported from the module. you can simply import them via using Object Destructuring syntax. It regenrated random data for Mocking/Prototyping
 
 ---
+
+## Whats New in V2
+
+V1 does not support Array and Object integration but the truth is JSON is incomplete without closely integrated Arrays and Objects in each others.For this problem set 2 new data config are added
+
+| Data Import | Return values of                                                                     |
+| ----------- | ------------------------------------------------------------------------------------ |
+| OBJECT      | Returns the Empty Object by Default, can pass object key-value pairs as a Parameters |
+| ARRAY       | returns the Array of `type` Specified of `limit` as length                           |
+
+## Use Cases
+
+#### OBJECT
+
+```sh
+const { DATE, BOOL, OBJECT } = require("dummy-json-api");
+const routes = [
+  {
+    routeName: "/object",
+    response: {
+      birthDay: OBJECT({
+        date: DATE,
+        adult: BOOL,
+      }),
+    },
+  },
+];
+app.startDummyServer(routes);
+```
+
+in `OBJECT` function you can directly pass the childrens and its types as per above example
+
+#### ARRAY
+
+```sh
+const {
+  app,
+  BOOL,
+  ARRAY,
+} = require("json-dummy-api");
+const routes = [
+  {
+    routeName: "/array",
+    response: {
+      arr: ARRAY({
+        type: BOOL,
+        limit: 30,
+      }),
+    },
+  },
+];
+app.startDummyServer(routes);
+```
+
+in `ARRAY` function you can directly pass object where you can specify type of the array elements in `type` and length of the array in `limit` args. Both args are compulsory
+
+
