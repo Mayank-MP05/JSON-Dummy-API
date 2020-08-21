@@ -1,4 +1,4 @@
-const usersDB = require("../databases/Users.database.json");
+let usersDB = require("../databases/Users.database.json");
 
 module.exports = (app) => {
   app.get("/users", (req, res) => {
