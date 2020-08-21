@@ -1,4 +1,4 @@
-PUT http://localhost:1234/products/1
+PUT http://localhost:1234/products/56
 content-type: application/json
 
 {
@@ -7,7 +7,7 @@ content-type: application/json
 }
 
 ###
-POST http://localhost:1234/products/35
+POST http://localhost:1234/products
 content-type: application/json
 
 {
@@ -16,10 +16,11 @@ content-type: application/json
 }
 
 ####
-POST http://localhost:1234/products/35
-content-type: application/json
+DELETE http://localhost:1234/products/1
 
-{
-    "name": "sample",
-    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
-}
+#### Get all
+GET http://localhost:1234/products
+
+#### Get One
+GET  http://localhost:1234/products/50
+

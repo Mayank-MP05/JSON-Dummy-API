@@ -22,14 +22,7 @@ app.get("/dashboard", (req, res) => {
   res.send("This is Dashboard Route");
 });
 
-app.put("/products/:id", (req, res) => {
-  console.log(req);
-  const id = parseInt(req.params.id);
-});
-app.post("/products/:id", (req, res) => {
-  console.log(req.body);
-  const id = parseInt(req.params.id);
-});
+
 
 //Function to Start the Server
 app.startDummyServer = (configObjectArray) => {
