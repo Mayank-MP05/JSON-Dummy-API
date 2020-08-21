@@ -27,8 +27,8 @@ const AutoIncrement = (startingIndex) => () => {
   return startingIndex++;
 };
 
-const ImgURLFunction = (side, height = side) => {
-  if (side && height) return `http://via.placeholder.com/${width}x${height}`;
+const ImgURLFunction = (side, height = side) => () => {
+  if (side && height) return `http://via.placeholder.com/${side}x${height}`;
   if (side) return `http://via.placeholder.com/${side}`;
   return `http://via.placeholder.com/150`;
 };

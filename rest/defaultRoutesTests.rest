@@ -1,0 +1,25 @@
+PUT http://localhost:1234/products/1
+content-type: application/json
+
+{
+    "updated":"Data",
+    "age":56
+}
+
+###
+POST http://localhost:1234/products/35
+content-type: application/json
+
+{
+    "name": "This is POst data",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}
+
+####
+POST http://localhost:1234/products/35
+content-type: application/json
+
+{
+    "name": "sample",
+    "time": "Wed, 21 Oct 2015 18:27:50 GMT"
+}

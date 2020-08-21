@@ -4,8 +4,9 @@ const bodyparser = require("body-parser");
 const defaultRoutes = require("./defaultRoutes");
 const PORT = process.env.PORT || 1234;
 const app = express();
-app.use(cors());
 app.use(bodyparser.json());
+app.use(express.json());
+app.use(cors());
 
 // All the default routes : QandA , Users ,Products
 defaultRoutes(app);
@@ -19,6 +20,15 @@ app.get("/", (req, res) => {
 //Visuals Routes to Homepage
 app.get("/dashboard", (req, res) => {
   res.send("This is Dashboard Route");
+});
+
+app.put("/products/:id", (req, res) => {
+  console.log(req);
+  const id = parseInt(req.params.id);
+});
+app.post("/products/:id", (req, res) => {
+  console.log(req.body);
+  const id = parseInt(req.params.id);
 });
 
 //Function to Start the Server
