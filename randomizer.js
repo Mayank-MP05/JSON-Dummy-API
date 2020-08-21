@@ -27,13 +27,10 @@ const AutoIncrement = (startingIndex) => () => {
   return startingIndex++;
 };
 
-const ImgURLFunction = (side) => {
+const ImgURLFunction = (side, height = side) => {
+  if (side && height) return `http://via.placeholder.com/${width}x${height}`;
   if (side) return `http://via.placeholder.com/${side}`;
-  else return `http://via.placeholder.com/150`;
-};
-
-const ImgURLFunction = (width, height) => {
-  return `http://via.placeholder.com/${width}x${height}`;
+  return `http://via.placeholder.com/150`;
 };
 
 module.exports = {

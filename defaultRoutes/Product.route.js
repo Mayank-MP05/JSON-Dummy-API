@@ -19,4 +19,19 @@ module.exports = (app) => {
       });
     }
   });
+
+  app.put("/products/:id", function (req, res) {
+    const id = parseInt(req.params.id);
+    if (id > 0 && id < 51) {
+      const requiredProduct = productDB.filter(
+        (singleProduct) => singleProduct.ProductID === id
+      );
+      console.log(requiredProduct);
+      res.send(requiredProduct);
+    } else {
+      res.send({
+        msg: "Product Index Out of Range",
+      });
+    }
+  });
 };
